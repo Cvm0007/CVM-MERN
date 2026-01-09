@@ -11,7 +11,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
-import Workflow from './components/Workflow';
+import Workflow from './components/WorkFlow';
 import Services from './components/Services';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
