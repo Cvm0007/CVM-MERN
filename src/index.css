@@ -1,0 +1,136 @@
+/**
+ * Global Styles and Custom Animations
+ * 
+ * This file contains global CSS rules and custom animations that complement Tailwind CSS.
+ * Feel free to modify these values to customize animations and effects.
+ */
+
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   GLOBAL STYLES & BASE CONFIGURATIONS
+   ======================================== */
+
+/* Smooth scrolling for all anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   CUSTOM ANIMATIONS
+   ======================================== */
+
+/* Fade In Animation - Subtle entrance effect */
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px); /* Start 20px below final position */
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); /* End at final position */
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards; /* 1 second duration, smooth easing */
+}
+
+/* Fade In Up Animation - More dramatic entrance */
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0; 
+    transform: translateY(40px); /* Start 40px below final position */
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); /* End at final position */
+  }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 1.5s ease-out forwards; /* 1.5 seconds for slower, dramatic effect */
+}
+
+/* ========================================
+   GLOW EFFECTS
+   ======================================== */
+
+/* Purple Glow Animation - For text and headings */
+@keyframes glow {
+  0%, 100% { 
+    /* Purple glow with medium intensity */
+    text-shadow: 0 0 10px #a855f7, 0 0 20px #9333ea; 
+  }
+  50% { 
+    /* Brighter purple glow at peak */
+    text-shadow: 0 0 25px #e879f9, 0 0 35px #c084fc; 
+  }
+}
+.animate-glow {
+  animation: glow 2s infinite ease-in-out; /* 2 second loop, smooth in-out */
+}
+
+/* ========================================
+   CUSTOMIZATION GUIDE
+   ======================================== */
+
+/*
+To modify animations:
+
+1. FADE EFFECTS:
+   - Change translateY values to adjust animation distance
+   - Modify duration (1s, 1.5s) to change speed
+   - Adjust ease-out to ease-in, ease-in-out for different timing
+
+2. GLOW EFFECTS:
+   - Change hex colors (#a855f7, #9333ea) to match your theme
+   - Modify pixel values (10px, 20px, 25px, 35px) for glow intensity
+   - Adjust duration (2s) for faster/slower glow
+   - Change ease-in-out to linear, ease-in for different glow patterns
+
+3. ADD NEW ANIMATIONS:
+   @keyframes slideIn {
+     0% { transform: translateX(-100%); opacity: 0; }
+     100% { transform: translateX(0); opacity: 1; }
+   }
+   .animate-slideIn {
+     animation: slideIn 0.8s ease-out forwards;
+   }
+
+4. THEME COLORS:
+   - Purple theme: #a855f7, #9333ea, #e879f9, #c084fc
+   - Blue theme: #3b82f6, #2563eb, #60a5fa, #93c5fd
+   - Green theme: #10b981, #059669, #34d399, #6ee7b7
+   - Orange theme: #f97316, #ea580c, #fb923c, #fdba74
+
+5. PERFORMANCE TIPS:
+   - Use will-change: transform, opacity for better performance
+   - Add transform: translateZ(0) for GPU acceleration
+   - Limit animations on mobile devices using @media queries
+*/
+
+/* ========================================
+   RESPONSIVE ANIMATIONS (Optional)
+   ======================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Disable animations on mobile for better performance */
+@media (max-width: 768px) {
+  .animate-fadeIn,
+  .animate-fadeInUp,
+  .animate-glow {
+    animation: none !important;
+  }
+}
