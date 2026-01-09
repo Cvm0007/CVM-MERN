@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaCode, FaWhatsapp } from 
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import GoToTop from "../components/GoToTop";
-import WhatsAppChat from "../components/WhatsappChat";
+import WhatsAppChat from "../components/WhatsAppChat";
 
 
 
