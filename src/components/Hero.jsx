@@ -20,6 +20,8 @@ import { useTheme } from '../contexts/ThemeContext';
  */
 const Hero = () => {
   const { isDark } = useTheme();
+  const MotionLink = motion(Link);
+
   
   return (
     <section
@@ -49,7 +51,7 @@ const Hero = () => {
               <p className={`text-lg sm:text-xl font-medium mb-2 ${
                 isDark ? 'text-purple-400' : 'text-purple-600'
               }`}>
-                👋 Welcome to my portfolio
+                Welcome to my Portfolio
               </p>
               <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight ${
                 isDark ? 'text-white' : 'text-gray-800'
@@ -71,11 +73,11 @@ const Hero = () => {
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">
                   <TypeAnimation
                     sequence={[
-                      'React Developer 💡',
+                      'JavaScript Developer 🚀',
                       3000,
-                      'MERN Stack Developer 💻',
+                      'React Developer💡',
                       3000,
-                      'JavaScript Engineer 🚀',
+                      'MERN Stack Engineer 💻',
                       3000,
                       'UI/UX Enthusiast 🎨',
                       3000
@@ -108,11 +110,11 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
-              <motion
+              <MotionLink
                 to="/contact"
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                className="px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center hover:animate-pulse"
               >
                 <span className="flex items-center justify-center gap-2">
                   Hire Me
@@ -123,15 +125,15 @@ const Hero = () => {
                     →
                   </motion.span>
                 </span>
-              </motion>
-              
-              <motion
+              </MotionLink>
+
+              <MotionLink
                 to="/projects"
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg shadow hover:shadow-md transition-all duration-300 text-center ${
+                className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg shadow hover:shadow-md transition-all duration-300 text-center hover:animate-pulse ${
                   isDark 
-                    ? 'text-purple-300 border-2 border-purple-400 bg-gray-800/60 backdrop-blur-md hover:bg-gray-700' 
+                    ? 'text-purple-500 border-2 border-purple-400 bg-gray-800/60 backdrop-blur-md hover:bg-gray-700' 
                     : 'text-purple-700 border-2 border-purple-400 bg-white/60 backdrop-blur-md hover:bg-purple-100'
                 }`}
               >
@@ -140,19 +142,18 @@ const Hero = () => {
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
-                  >
-                    📁
+                  > →
                   </motion.span>
                 </span>
-              </motion>
+              </MotionLink>
 
               {/* Resume Download Button */}
               <motion.a
-                href="/resume.pdf"
+                href="/Shivam_Narayan_MERN.pdf"
                 download
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg shadow hover:shadow-md transition-all duration-300 text-center ${
+                className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg shadow hover:shadow-md transition-all duration-300 text-center animate-glow ${
                   isDark 
                     ? 'text-green-300 border-2 border-green-400 bg-gray-800/60 backdrop-blur-md hover:bg-gray-700' 
                     : 'text-green-700 border-2 border-green-400 bg-white/60 backdrop-blur-md hover:bg-green-100'
@@ -173,8 +174,8 @@ const Hero = () => {
               transition={{ delay: 1 }}
             >
               {[
-                { href: "https://github.com/", icon: <FaGithub />, color: isDark ? 'text-gray-400 hover:text-white' : 'text-gray-700 hover:text-black' },
-                { href: "https://linkedin.com/in/shivam-narayan-mern", icon: <FaLinkedin />, color: 'text-blue-600 hover:text-blue-800' },
+                { href: "https://github.com/Cvm0007", icon: <FaGithub />, color: isDark ? 'text-gray-400 hover:text-white' : 'text-gray-700 hover:text-black' },
+                { href: "https://linkedin.com/in/cvm-mern", icon: <FaLinkedin />, color: 'text-blue-600 hover:text-blue-800' },
                 { href: "mailto:mahtha.s@gmail.com", icon: <FaEnvelope />, color: 'text-red-500 hover:text-red-700' }
               ].map((social, index) => (
                 <motion.a
@@ -182,12 +183,12 @@ const Hero = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  whileHover={{ rotate: 10 }}
                   whileTap={{ scale: 0.9 }}
                   className={`transition-all duration-300 drop-shadow-md hover:drop-shadow-xl ${social.color}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.1 + index * 0.1 }}
+                  transition={{ delay: 0.1 + index * 0.1 }}
                 >
                   {social.icon}
                 </motion.a>

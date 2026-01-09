@@ -21,6 +21,7 @@ const Footer = () => {
         {/* Brand + Tagline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
+          // whileHover={{ rotate: 180 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           viewport={{ once: true }}
@@ -29,7 +30,13 @@ const Footer = () => {
             to="/"
             className="flex items-center space-x-2 group mb-4"
           >
-            <FaCode className="text-2xl text-purple-600 dark:text-purple-400 group-hover:animate-pulse" />
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.6 }}
+            >
+            <FaCode 
+            className="text-3xl text-orange-600 dark:text-orange-400 group-hover:animate-pulse" />
+            </motion.div>
             <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 bg-clip-text text-transparent">
               CVM MERN.
             </span>
@@ -39,7 +46,7 @@ const Footer = () => {
           </p>
           <p className="text-gray-600 dark:text-gray-400 text-sm">
             Creating meaningful digital experiences with passion and precision.<br/>
-            <span className="text-sm bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 bg-clip-text text-transparent">" One Soulful line of <b>Code</b> at a Time "</span>
+            <span className="text-sm bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 bg-clip-text text-transparent animate-pulse">" One Soulful line of <b>Code</b> at a Time "</span>
           </p>
         </motion.div>
 
@@ -92,20 +99,20 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex gap-5 justify-center md:justify-start text-2xl mt-4">
             <a
-              href="https://github.com/"
-              className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 hover:scale-110"
+              href="https://github.com/Cvm0007"
+              className="text-gray-500 dark:text-gray-500 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 hover:scale-110 animate-pulse"
             >
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/in/shivam-narayan-mern"
-              className="text-blue-600 hover:text-blue-800 transition-all duration-300 hover:scale-110"
+              href="https://linkedin.com/in/cvm-mern"
+              className="text-gray-500 hover:text-blue-700 transition-all duration-300 hover:scale-110 animate-pulse"
             >
               <FaLinkedin />
             </a>
             <a
               href="mailto:mahtha.s@gmail.com"
-              className="text-red-500 hover:text-red-700 transition-all duration-300 hover:scale-110"
+              className="text-gray-500 hover:text-red-700 transition-all duration-300 hover:scale-110 animate-pulse"
             >
               <FaEnvelope />
             </a>
@@ -113,7 +120,7 @@ const Footer = () => {
 
           {/* Follow for more tagline */}
           <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-            Follow for more updates❤️
+            Follow for more updates <span className="animate-pulse">❤️</span>
           </p>
         </motion.div>
       </div>
@@ -126,9 +133,9 @@ const Footer = () => {
         transition={{ delay: 0.6 }}
         viewport={{ once: true }}
       >
-        © {new Date().getFullYear()} MyPortfolio • Designed & Developed by{" "}
+        © {new Date().getFullYear()} All rights reserved • Designed & Developed by{" "}
         <span className="text-purple-600 dark:text-purple-400 font-semibold">CVM</span> <br/>
-        <span className=""> Made with ❤️ in India 🇮🇳 </span>
+        <span className=""> Made with <span className="animate-pulse">❤️</span> in India 🇮🇳 </span>
 
         <WhatsAppChat />
         <GoToTop />

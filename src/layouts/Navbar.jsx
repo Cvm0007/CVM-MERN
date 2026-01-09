@@ -97,7 +97,7 @@ const Navbar = () => {
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
-              className="text-3xl text-purple-600 dark:text-purple-400"
+              className="text-3xl text-orange-600 dark:text-orange-400 group-hover:animate-pulse"
             >
               <FaCode />
             </motion.div>
@@ -139,7 +139,7 @@ const Navbar = () => {
           {/* Social Links - Responsive visibility */}
           <div className="hidden xl:flex items-center space-x-3">
             <motion.a
-              href="https://github.com"
+              href="https://github.com/Cvm0007"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
@@ -149,18 +149,18 @@ const Navbar = () => {
               <FaGithub size={20} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/cvm-mern"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
             >
               <FaLinkedin size={20} />
             </motion.a>
             <motion.a
-              href="mailto:contact@shivam.dev"
-              className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+              href="mailto:mahtha.s@gmail.com"
+              className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -171,7 +171,7 @@ const Navbar = () => {
           {/* Theme Toggle - Enhanced with animation */}
           <motion.button
             onClick={toggleTheme}
-            className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
+            className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 hover:text-blue-500 dark:hover:text-yellow-400"
             aria-label="Toggle theme"
             whileHover={{ scale: 1.1, rotate: 15 }}
             whileTap={{ scale: 0.9 }}
