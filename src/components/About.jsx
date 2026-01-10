@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaReact, FaNodeJs, FaDatabase, FaDesktop, FaArrowRight, FaCode, FaGitAlt, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaDatabase, FaArrowRight, FaGitAlt, FaCss3Alt } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiJavascript, SiTypescript } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
@@ -18,17 +18,19 @@ import { useTheme } from '../contexts/ThemeContext';
  */
 const About = () => {
   const { isDark } = useTheme();
+  const MotionLink = motion(Link);
   
   // Tech stack data for easier maintenance
   const techStack = [
     { icon: <FaReact />, name: 'React', color: 'purple' },
-    { icon: <FaNodeJs />, name: 'Node.js', color: 'green' },
     { icon: <SiTailwindcss />, name: 'Tailwind CSS', color: 'indigo' },
+    { icon: <FaNodeJs />, name: 'Node.js', color: 'green' },
     { icon: <SiMongodb />, name: 'MongoDB', color: 'yellow' },
-    { icon: <FaDesktop />, name: 'JavaScript', color: 'pink' },
-    { icon: <SiTypescript />, name: 'TypeScript', color: 'blue' },
+    { icon: <SiJavascript />, name: 'JavaScript', color: 'pink' },
+    { icon: <FaCss3Alt />, name: 'CSS', color: 'pink' },
+    // { icon: <SiTypescript />, name: 'TypeScript', color: 'blue' },
     { icon: <FaGitAlt />, name: 'Git', color: 'red' },
-    { icon: <FaDatabase />, name: 'SQL', color: 'orange' }
+    // { icon: <FaDatabase />, name: 'SQL', color: 'orange' }
   ];
   
   return (
@@ -57,7 +59,7 @@ const About = () => {
           <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${
             isDark ? 'text-gray-400' : 'text-gray-600'
           }`}>
-            Get to know the developer behind the code
+            Get to know the developer behind the code.
           </p>
         </motion.div>
 
@@ -87,14 +89,14 @@ const About = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="./Shivam.png" // Replace with your real image
+                  src="./Shivam.png" // Replace with real image
                   alt="Shivam Avatar"
                   className="object-cover w-full h-full"
                 />
                 
                 {/* Animated Border */}
                 <motion.div
-                  className={`absolute inset-0 rounded-full border-4 ${
+                  className={`absolute inset-0 rounded-full border-8 ${
                     isDark ? 'border-purple-400' : 'border-purple-300'
                   }`}
                   animate={{ scale: [1, 1.1, 1] }}
@@ -139,8 +141,8 @@ const About = () => {
               <p className={`text-base sm:text-lg mb-6 leading-relaxed ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                A passionate <span className={`font-semibold ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>MERN Stack Developer</span> 
-                turning ideas into full-stack web magic. From UI polish to backend performance, I love building things
+                A passionate <span className={`font-semibold ${isDark ? 'text-orange-400' : 'text-orange-600'}`}>MERN Stack Developer </span> 
+                  turning ideas into full-stack web magic. From UI polish to backend performance, I love building things
                 that solve problems and look good doing it.
               </p>
             </motion.div>
@@ -168,9 +170,9 @@ const About = () => {
               className="grid grid-cols-3 gap-4 mb-8"
             >
               {[
-                { number: '3+', label: 'Years Experience' },
-                { number: '50+', label: 'Projects Completed' },
-                { number: '100%', label: 'Client Satisfaction' }
+                { number: '1+', label: 'Years Experience' },
+                { number: '20+', label: 'Projects Completed' },
+                { number: '99%', label: 'Client Satisfaction' }
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -211,12 +213,12 @@ const About = () => {
                 {techStack.map((tech, index) => (
                   <motion.span
                     key={tech.name}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ${
+                    className={`flex items-center gap-2 px-3 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:animate-pulse ${
                       isDark 
                         ? `text-${tech.color}-300 bg-${tech.color}-900/30 border border-${tech.color}-700` 
                         : `text-${tech.color}-700 bg-${tech.color}-100`
                     }`}
-                    whileHover={{ scale: 1.05, y: -2 }}
+                    // whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -230,15 +232,15 @@ const About = () => {
             </motion.div>
 
             {/* Contact Me CTA - Enhanced button */}
-            <motion.a
+            <MotionLink
               to="/contact"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              // transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: 1.05, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg shadow-lg hover:from-purple-700 hover:to-pink-600 hover:shadow-xl transition-all duration-300 font-semibold"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg shadow-lg hover:from-purple-700 hover:to-pink-600 hover:shadow-xl transition-all duration-300 font-semibold hover:animate-pulse"
             >
               Let's Work Together
               <motion.div
@@ -247,7 +249,7 @@ const About = () => {
               >
                 <FaArrowRight />
               </motion.div>
-            </motion.a>
+            </MotionLink>
           </div>
         </motion.div>
       </div>

@@ -1,8 +1,8 @@
 // src/components/Skills.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaGithub, FaDocker, FaAws, FaFigma, FaPython } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiTypescript, SiRedux, SiNextdotjs, SiGraphql, SiPostgresql, SiRedis } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDocker, FaAws, FaFigma, FaPython } from 'react-icons/fa';
+import { SiTailwindcss, SiMongodb, SiPostgresql, SiRedis, SiPhp, SiBookstack } from 'react-icons/si';
 import { useTheme } from '../contexts/ThemeContext';
 
 /**
@@ -26,7 +26,7 @@ const Skills = () => {
       icon: <FaHtml5 />, 
       name: 'HTML5', 
       category: 'Frontend',
-      level: 95,
+      level: 72,
       color: 'text-orange-500', 
       darkColor: 'text-orange-400',
       bgColor: 'bg-orange-100 dark:bg-orange-900/20',
@@ -36,7 +36,7 @@ const Skills = () => {
       icon: <FaCss3Alt />, 
       name: 'CSS3', 
       category: 'Frontend',
-      level: 90,
+      level: 64,
       color: 'text-blue-500', 
       darkColor: 'text-blue-400',
       bgColor: 'bg-blue-100 dark:bg-blue-900/20',
@@ -46,57 +46,57 @@ const Skills = () => {
       icon: <FaJs />, 
       name: 'JavaScript', 
       category: 'Frontend',
-      level: 92,
+      level: 86,
       color: 'text-yellow-500', 
       darkColor: 'text-yellow-400',
       bgColor: 'bg-yellow-100 dark:bg-yellow-900/20',
       borderColor: 'border-yellow-300 dark:border-yellow-600'
     },
-    { 
-      icon: <SiTypescript />, 
-      name: 'TypeScript', 
-      category: 'Frontend',
-      level: 85,
-      color: 'text-blue-600', 
-      darkColor: 'text-blue-400',
-      bgColor: 'bg-blue-100 dark:bg-blue-900/20',
-      borderColor: 'border-blue-300 dark:border-blue-600'
-    },
+    // { 
+    //   icon: <SiTypescript />, 
+    //   name: 'TypeScript', 
+    //   category: 'Frontend',
+    //   level: 85,
+    //   color: 'text-blue-600', 
+    //   darkColor: 'text-blue-400',
+    //   bgColor: 'bg-blue-100 dark:bg-blue-900/20',
+    //   borderColor: 'border-blue-300 dark:border-blue-600'
+    // },
     { 
       icon: <FaReact />, 
       name: 'React.js', 
       category: 'Frontend',
-      level: 94,
+      level: 68,
       color: 'text-cyan-400', 
       darkColor: 'text-cyan-300',
       bgColor: 'bg-cyan-100 dark:bg-cyan-900/20',
       borderColor: 'border-cyan-300 dark:border-cyan-600'
     },
-    { 
-      icon: <SiNextdotjs />, 
-      name: 'Next.js', 
-      category: 'Frontend',
-      level: 88,
-      color: 'text-gray-800', 
-      darkColor: 'text-gray-300',
-      bgColor: 'bg-gray-100 dark:bg-gray-800/50',
-      borderColor: 'border-gray-300 dark:border-gray-600'
-    },
-    { 
-      icon: <SiRedux />, 
-      name: 'Redux', 
-      category: 'Frontend',
-      level: 86,
-      color: 'text-purple-600', 
-      darkColor: 'text-purple-400',
-      bgColor: 'bg-purple-100 dark:bg-purple-900/20',
-      borderColor: 'border-purple-300 dark:border-purple-600'
-    },
+    // { 
+    //   icon: <SiNextdotjs />, 
+    //   name: 'Next.js', 
+    //   category: 'Frontend',
+    //   level: 88,
+    //   color: 'text-gray-800', 
+    //   darkColor: 'text-gray-300',
+    //   bgColor: 'bg-gray-100 dark:bg-gray-800/50',
+    //   borderColor: 'border-gray-300 dark:border-gray-600'
+    // },
+    // { 
+    //   icon: <SiRedux />, 
+    //   name: 'Redux', 
+    //   category: 'Frontend',
+    //   level: 86,
+    //   color: 'text-purple-600', 
+    //   darkColor: 'text-purple-400',
+    //   bgColor: 'bg-purple-100 dark:bg-purple-900/20',
+    //   borderColor: 'border-purple-300 dark:border-purple-600'
+    // },
     { 
       icon: <SiTailwindcss />, 
       name: 'Tailwind CSS', 
       category: 'Frontend',
-      level: 93,
+      level: 70,
       color: 'text-teal-500', 
       darkColor: 'text-teal-400',
       bgColor: 'bg-teal-100 dark:bg-teal-900/20',
@@ -108,17 +108,17 @@ const Skills = () => {
       icon: <FaNodeJs />, 
       name: 'Node.js', 
       category: 'Backend',
-      level: 91,
+      level: 59,
       color: 'text-green-600', 
       darkColor: 'text-green-400',
       bgColor: 'bg-green-100 dark:bg-green-900/20',
       borderColor: 'border-green-300 dark:border-green-600'
     },
     { 
-      icon: <SiGraphql />, 
-      name: 'GraphQL', 
+      icon: <SiPhp />, 
+      name: 'PHP', 
       category: 'Backend',
-      level: 82,
+      level: 57,
       color: 'text-pink-600', 
       darkColor: 'text-pink-400',
       bgColor: 'bg-pink-100 dark:bg-pink-900/20',
@@ -128,7 +128,7 @@ const Skills = () => {
       icon: <FaPython />, 
       name: 'Python', 
       category: 'Backend',
-      level: 78,
+      level: 55,
       color: 'text-blue-500', 
       darkColor: 'text-blue-400',
       bgColor: 'bg-blue-100 dark:bg-blue-900/20',
@@ -140,7 +140,7 @@ const Skills = () => {
       icon: <SiMongodb />, 
       name: 'MongoDB', 
       category: 'Database',
-      level: 89,
+      level: 59,
       color: 'text-green-500', 
       darkColor: 'text-green-400',
       bgColor: 'bg-green-100 dark:bg-green-900/20',
@@ -150,7 +150,7 @@ const Skills = () => {
       icon: <SiPostgresql />, 
       name: 'PostgreSQL', 
       category: 'Database',
-      level: 85,
+      level: 57,
       color: 'text-blue-700', 
       darkColor: 'text-blue-400',
       bgColor: 'bg-blue-100 dark:bg-blue-900/20',
@@ -160,7 +160,7 @@ const Skills = () => {
       icon: <SiRedis />, 
       name: 'Redis', 
       category: 'Database',
-      level: 80,
+      level: 55,
       color: 'text-red-600', 
       darkColor: 'text-red-400',
       bgColor: 'bg-red-100 dark:bg-red-900/20',
@@ -172,7 +172,7 @@ const Skills = () => {
       icon: <FaGitAlt />, 
       name: 'Git', 
       category: 'Tools',
-      level: 96,
+      level: 70,
       color: 'text-red-500', 
       darkColor: 'text-red-400',
       bgColor: 'bg-red-100 dark:bg-red-900/20',
@@ -182,7 +182,7 @@ const Skills = () => {
       icon: <FaGithub />, 
       name: 'GitHub', 
       category: 'Tools',
-      level: 94,
+      level: 72,
       color: 'text-gray-700', 
       darkColor: 'text-gray-300',
       bgColor: 'bg-gray-100 dark:bg-gray-800/50',
@@ -192,7 +192,7 @@ const Skills = () => {
       icon: <FaDocker />, 
       name: 'Docker', 
       category: 'Tools',
-      level: 83,
+      level: 54,
       color: 'text-blue-600', 
       darkColor: 'text-blue-400',
       bgColor: 'bg-blue-100 dark:bg-blue-900/20',
@@ -202,22 +202,22 @@ const Skills = () => {
       icon: <FaAws />, 
       name: 'AWS', 
       category: 'Tools',
-      level: 76,
+      level: 56,
       color: 'text-orange-600', 
       darkColor: 'text-orange-400',
       bgColor: 'bg-orange-100 dark:bg-orange-900/20',
       borderColor: 'border-orange-300 dark:border-orange-600'
-    },
-    { 
-      icon: <FaFigma />, 
-      name: 'Figma', 
-      category: 'Tools',
-      level: 87,
-      color: 'text-purple-600', 
-      darkColor: 'text-purple-400',
-      bgColor: 'bg-purple-100 dark:bg-purple-900/20',
-      borderColor: 'border-purple-300 dark:border-purple-600'
     }
+    // { 
+    //   icon: <FaFigma />, 
+    //   name: 'Figma', 
+    //   category: 'Tools',
+    //   level: 68,
+    //   color: 'text-purple-600', 
+    //   darkColor: 'text-purple-400',
+    //   bgColor: 'bg-purple-100 dark:bg-purple-900/20',
+    //   borderColor: 'border-purple-300 dark:border-purple-600'
+    // }
   ];
 
   // Group skills by category
@@ -247,12 +247,12 @@ const Skills = () => {
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
-            Tech <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">Stack</span> & Skills
+            Tech <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">Stack</span> & <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">Skills</span>
           </h2>
           <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${
             isDark ? 'text-gray-400' : 'text-gray-600'
           }`}>
-            Comprehensive expertise across modern web technologies and development tools
+            Comprehensive expertise across modern web technologies and development tools.
           </p>
         </motion.div>
 
@@ -286,15 +286,15 @@ const Skills = () => {
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
-                    className={`group relative p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${skill.bgColor} ${skill.borderColor} backdrop-blur-sm`}
+                    className={`group relative p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${skill.bgColor} ${skill.borderColor} backdrop-blur-sm hover:animate-pulse`}
                     whileHover={{ scale: 1.05, y: -5 }}
                     whileTap={{ scale: 0.98 }}
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ 
-                      delay: categoryIndex * 0.2 + index * 0.1,
-                      duration: 0.5
+                      delay: categoryIndex * 0.1 + index * 0.1,
+                      duration: 0.0,
                     }}
                   >
                     {/* Skill Icon */}
@@ -304,7 +304,7 @@ const Skills = () => {
                     
                     {/* Skill Name */}
                     <h4 className={`text-sm sm:text-base font-bold mb-2 ${
-                      isDark ? 'text-white' : 'text-gray-800'
+                      isDark ? 'text-white' : 'text-gray-700'
                     }`}>
                       {skill.name}
                     </h4>
@@ -375,7 +375,7 @@ const Skills = () => {
         >
           <div className="text-center">
             <h4 className={`text-xl sm:text-2xl font-bold mb-4 ${
-              isDark ? 'text-white' : 'text-gray-800'
+              isDark ? 'text-orange-400' : 'text-orange-600'
             }`}>
               Always Learning & Growing
             </h4>
@@ -387,11 +387,11 @@ const Skills = () => {
             </p>
             
             {/* Learning Progress Indicators */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 ">
               {[
-                { label: 'Courses Completed', value: '25+', icon: '📚' },
-                { label: 'Certificates', value: '12', icon: '🏆' },
-                { label: 'Learning Hours', value: '1000+', icon: '⏰' }
+                { label: 'Courses Completed', value: '11+', icon: '🎓' },
+                { label: 'Certificates', value: '9+', icon: '🏆' },
+                { label: 'Learning Hours', value: '1007+', icon: '⏰' }
               ].map((item, index) => (
                 <motion.div
                   key={item.label}
@@ -402,10 +402,10 @@ const Skills = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 1.2 + index * 0.1 }}
+                  transition={{ delay: 0.0 + index * 0.1 }}
                 >
                   <div className="text-2xl mb-2">{item.icon}</div>
-                  <div className={`text-xl sm:text-2xl font-bold ${
+                  <div className={`text-xl sm:text-2xl font-bold animate-glow ${
                     isDark ? 'text-purple-400' : 'text-purple-600'
                   }`}>
                     {item.value}

@@ -98,12 +98,12 @@ const Workflow = () => {
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
-            Development <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">Workflow</span> 🧩
+            Development <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">Workflow</span>
           </h2>
           <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${
             isDark ? 'text-gray-400' : 'text-gray-600'
           }`}>
-            A systematic approach to building exceptional digital experiences
+            A systematic approach to building exceptional digital experiences.
           </p>
         </motion.div>
 
@@ -181,7 +181,7 @@ const Workflow = () => {
                             ? 'bg-gray-800/50 text-gray-300' 
                             : 'bg-gray-100/50 text-gray-700'
                         }`}
-                        whileHover={{ scale: 1.02, x: 5 }}
+                        // whileHover={{ scale: 1.02, x: 5 }}
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -235,7 +235,7 @@ const Workflow = () => {
         >
           <div className="text-center">
             <h3 className={`text-xl sm:text-2xl font-bold mb-4 ${
-              isDark ? 'text-white' : 'text-gray-800'
+              isDark ? 'text-orange-400' : 'text-orange-600'
             }`}>
               Why This Workflow Works
             </h3>
@@ -266,7 +266,7 @@ const Workflow = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 1.4 + index * 0.1 }}
+                  transition={{ delay: 0.0 + index * 0.1 }}
                 >
                   <div className="text-2xl mb-2">{item.icon}</div>
                   <h4 className={`text-lg font-bold mb-2 ${

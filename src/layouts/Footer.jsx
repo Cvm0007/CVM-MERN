@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaCode, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaQuoteRight, FaQuoteLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import GoToTop from "../components/GoToTop";
@@ -46,7 +46,9 @@ const Footer = () => {
           </p>
           <p className="text-gray-600 dark:text-gray-400 text-sm">
             Creating meaningful digital experiences with passion and precision.<br/>
-            <span className="text-sm bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 bg-clip-text text-transparent animate-pulse">" One Soulful line of <b>Code</b> at a Time "</span>
+            <FaQuoteLeft className="inline-block mb-1 text-purple-600 dark:text-purple-400" />
+            <span className="text-sm bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 bg-clip-text text-transparent animate-pulse"> One soulful line of <b>Code</b> at a time </span>
+            <FaQuoteRight className="inline-block mt-1 text-purple-600 dark:text-purple-400" />
           </p>
         </motion.div>
 

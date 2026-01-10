@@ -123,12 +123,12 @@ const Testimonials = () => {
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
-            Client <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">Love</span> 💖
+            Client's <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">Love</span>
           </h2>
           <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${
             isDark ? 'text-gray-400' : 'text-gray-600'
           }`}>
-            What my clients say about working with me
+            What my clients say about working with me..
           </p>
         </motion.div>
 

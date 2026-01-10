@@ -151,7 +151,8 @@ const Hero = () => {
               <motion.a
                 href="/Shivam_Narayan_MERN.pdf"
                 download
-                whileHover={{ scale: 1.05, rotate: -5 }}
+                initial={{ opacity: 1, rotate: 180 }}
+                whileHover={{ scale: 1.05, rotate: 0 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg shadow hover:shadow-md transition-all duration-300 text-center animate-glow ${
                   isDark 
