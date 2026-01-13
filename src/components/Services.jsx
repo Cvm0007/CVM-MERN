@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaDesktop, FaMobileAlt, FaServer, FaRocket, FaCode, FaDatabase, FaCloud, FaShieldAlt } from 'react-icons/fa';
+import { FaDesktop, FaMobileAlt, FaServer, FaRocket, FaCode, FaDatabase, FaCloud, FaShieldAlt, FaArrowRight } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
 
 /**
@@ -15,6 +15,7 @@ import { useTheme } from '../contexts/ThemeContext';
  */
 const Services = () => {
   const { isDark } = useTheme();
+  const MotionLink = motion(Link);
   
   // Enhanced services data with detailed information
   const services = [
@@ -98,12 +99,12 @@ const Services = () => {
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
-            What I <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">Offer</span> ⚙️
+            What I <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400">Offer</span>
           </h2>
           <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${
             isDark ? 'text-gray-400' : 'text-gray-600'
           }`}>
-            Comprehensive web development services tailored to your needs
+            Comprehensive web development services tailored to your needs.
           </p>
         </motion.div>
 
@@ -113,20 +114,20 @@ const Services = () => {
             <motion.div
               key={service.title}
               className={`group relative p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${service.bgColor} ${service.borderColor} backdrop-blur-sm`}
-              whileHover={{ scale: 1.03, y: -5 }}
+              whileHover={{ scale: 1.03, y: -10 }}
               whileTap={{ scale: 0.98 }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ 
                 delay: index * 0.1,
-                duration: 0.6
+                duration: 0.1
               }}
             >
               {/* Service Icon */}
               <motion.div 
                 className={`mb-6 ${service.iconColor} group-hover:scale-110 transition-transform duration-300`}
-                whileHover={{ rotate: 5 }}
+                whileHover={{ rotate: 5, y: -5 }}
               >
                 {service.icon}
               </motion.div>
@@ -172,13 +173,14 @@ const Services = () => {
               <div className={`absolute inset-0 rounded-xl bg-gradient-to-t from-${service.color}-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
               
               {/* Learn More Button */}
-              <motion.button
+              <MotionLink
+                to="/projects"
                 className={`mt-6 text-sm font-semibold ${service.iconColor} hover:underline`}
                 whileHover={{ x: 5 }}
                 transition={{ duration: 0.2 }}
               >
                 Learn More →
-              </motion.button>
+              </MotionLink>
             </motion.div>
           ))}
         </div>
@@ -188,7 +190,7 @@ const Services = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.8 }}
+          transition={{ duration: 0.1, delay: 0.1 }}
           className={`mt-16 p-6 sm:p-8 rounded-2xl text-center ${
             isDark 
               ? 'bg-gradient-to-r from-purple-900/50 to-pink-900/50 border border-purple-700' 
@@ -196,7 +198,7 @@ const Services = () => {
           }`}
         >
           <h3 className={`text-xl sm:text-2xl font-bold mb-4 ${
-            isDark ? 'text-white' : 'text-gray-800'
+            isDark ? 'text-orange-400' : 'text-orange-600'
           }`}>
             Ready to start your project?
           </h3>
@@ -205,10 +207,10 @@ const Services = () => {
           }`}>
             Let's discuss how I can help bring your ideas to life with professional web development services.
           </p>
-          <motion.a
+          <MotionLink
             to="/contact"
-            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg shadow-lg hover:from-purple-700 hover:to-pink-600 hover:shadow-xl transition-all duration-300 font-semibold"
-            whileHover={{ scale: 1.05, y: -2 }}
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg shadow-lg hover:from-purple-700 hover:to-pink-600 hover:shadow-xl transition-all duration-300 font-semibold hover:animate-pulse"
+            whileHover={{ scale: 1.05, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
             Get Started
@@ -216,9 +218,9 @@ const Services = () => {
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
             >
-              →
+            <FaArrowRight />
             </motion.div>
-          </motion.a>
+          </MotionLink>
         </motion.div>
       </div>
     </section>

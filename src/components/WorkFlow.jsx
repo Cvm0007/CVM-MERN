@@ -146,7 +146,7 @@ const Workflow = () => {
                 {/* Step Icon */}
                 <motion.div 
                   className={`mb-6 ${step.iconColor} group-hover:scale-110 transition-transform duration-300`}
-                  whileHover={{ rotate: 5 }}
+                  // whileHover={{ rotate: 5 }}
                 >
                   {step.icon}
                 </motion.div>
