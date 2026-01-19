@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaArrowRight } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
 
 /**
@@ -54,14 +54,14 @@ const Contact = () => {
     {
       icon: FaPhone,
       label: 'Phone',
-      value: '+91 XXXXX XXXXX',
-      href: 'tel:+91XXXXXXXXXX',
+      value: '+91 80926 XXXXX',
+      href: 'tel:+918092604468',
       color: 'green'
     },
     {
       icon: FaMapMarkerAlt,
       label: 'Location',
-      value: 'India',
+      value: 'Gurugram, HR (122001) - India',
       href: '#',
       color: 'red'
     }
@@ -71,19 +71,19 @@ const Contact = () => {
   const socialLinks = [
     {
       icon: FaGithub,
-      href: 'https://github.com/',
+      href: 'https://github.com/Cvm007',
       label: 'GitHub',
       color: 'gray'
     },
     {
       icon: FaLinkedin,
-      href: 'https://linkedin.com/in/shivam-narayan-mern',
+      href: 'https://linkedin.com/in/cvm-mern',
       label: 'LinkedIn',
       color: 'blue'
     },
     {
       icon: FaTwitter,
-      href: 'https://twitter.com/',
+      href: 'https:cvm-mernn.netlify.app/',
       label: 'Twitter',
       color: 'sky'
     }
@@ -110,7 +110,7 @@ const Contact = () => {
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
-            Let's <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-pink-500 to-violet-400">Connect</span> 💬
+            Let's <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-pink-500 to-violet-400">Connect</span>
           </h2>
           <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${
             isDark ? 'text-gray-400' : 'text-gray-600'
@@ -126,7 +126,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.1, delay: 0.1 }}
             className="space-y-8"
           >
             {/* Contact Cards */}
@@ -135,7 +135,7 @@ const Contact = () => {
                 <motion.a
                   key={info.label}
                   href={info.href}
-                  className={`group flex items-center gap-4 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ${
+                  className={`group flex items-center gap-4 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:animate-pulse ${
                     isDark 
                       ? 'bg-gray-800/60 backdrop-blur-sm border border-gray-700 hover:border-purple-600' 
                       : 'bg-white border border-gray-200 hover:border-orange-300'
@@ -154,13 +154,13 @@ const Contact = () => {
                       info.color === 'red' ? 'bg-red-500' : 'bg-gray-500'
                     }`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.1 }}
                   >
                     <info.icon size={20} />
                   </motion.div>
                   <div className="flex-1">
                     <h4 className={`text-sm sm:text-base font-semibold mb-1 ${
-                      isDark ? 'text-gray-300' : 'text-gray-600'
+                      isDark ? 'text-purple-400' : 'text-purple-600'
                     }`}>
                       {info.label}
                     </h4>
@@ -171,13 +171,13 @@ const Contact = () => {
                     </p>
                   </div>
                   <motion.div
-                    className={`text-2xl ${
+                    className={`text-2xl hover:text-orange-400 ${
                       isDark ? 'text-gray-400' : 'text-gray-400'
                     }`}
                     whileHover={{ x: 3 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.1 }}
                   >
-                    →
+                    <FaArrowRight />
                   </motion.div>
                 </motion.a>
               ))}
@@ -188,7 +188,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.1 }}
               className={`p-6 sm:p-8 rounded-xl ${
                 isDark 
                   ? 'bg-gray-800/60 backdrop-blur-sm border border-gray-700' 
@@ -196,11 +196,11 @@ const Contact = () => {
               }`}
             >
               <h3 className={`text-lg sm:text-xl font-bold mb-6 ${
-                isDark ? 'text-white' : 'text-gray-800'
+                isDark ? 'text-purple-400' : 'text-purple-600'
               }`}>
                 Connect on Social Media
               </h3>
-              <div className="flex gap-4">
+              <div className="flex gap-4 sm:gap-6">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.label}
@@ -209,15 +209,15 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center transition-colors ${
                       isDark 
-                        ? 'bg-gray-700/50 text-gray-400 hover:text-white' 
-                        : 'bg-gray-100/50 text-gray-600 hover:text-gray-800'
+                        ? 'bg-gray-700/50 text-gray-400 hover:text-orange-400' 
+                        : 'bg-gray-100/50 text-gray-600 hover:text-orange-600'
                     }`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.5 + index * 0.1 }}
+                    transition={{ delay: 0.1 + index * 0.1 }}
                   >
                     <social.icon size={20} />
                   </motion.a>
@@ -238,9 +238,9 @@ const Contact = () => {
               }`}
             >
               <h4 className={`text-base sm:text-lg font-bold mb-2 ${
-                isDark ? 'text-white' : 'text-gray-800'
+                isDark ? 'text-orange-400' : 'text-orange-600'
               }`}>
-                📬 Response Time
+                Response Time
               </h4>
               <p className={`text-sm sm:text-base ${
                 isDark ? 'text-gray-300' : 'text-gray-600'
@@ -277,7 +277,7 @@ const Contact = () => {
               {/* Form Header */}
               <div className="mb-6">
                 <h3 className={`text-xl sm:text-2xl font-bold ${
-                  isDark ? 'text-white' : 'text-gray-800'
+                  isDark ? 'text-orange-400' : 'text-orange-600'
                 }`}>
                   Send Me a Message
                 </h3>
@@ -308,7 +308,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="John Doe"
+                    placeholder="Mukesh Amwani"
                     required
                     whileFocus={{ scale: 1.02 }}
                     className={`w-full px-4 py-3 sm:py-4 rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 text-base sm:text-lg ${
@@ -337,7 +337,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="john@example.com"
+                    placeholder="mukesh.a@example.com"
                     required
                     whileFocus={{ scale: 1.02 }}
                     className={`w-full px-4 py-3 sm:py-4 rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 text-base sm:text-lg ${
@@ -381,13 +381,13 @@ const Contact = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-orange-400 via-pink-400 to-violet-400 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                  whileHover={{ scale: isSubmitting ? 1 : 1.05, y: isSubmitting ? 0 : -2 }}
+                  className="w-full bg-gradient-to-r from-orange-400 via-pink-400 to-violet-400 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:animate-pulse"
+                  whileHover={{ scale: isSubmitting ? 1 : 1.05, y: isSubmitting ? 0 : -2, rotate: isSubmitting ? 0 : 2 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.7 }}
+                  transition={{ delay: 0.1 }}
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
@@ -400,12 +400,12 @@ const Contact = () => {
                     </span>
                   ) : (
                     <span className="flex items-center justify-center gap-2">
-                      🚀 Send Message
+                      Send Message
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
                         transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
                       >
-                        →
+                      <FaArrowRight />
                       </motion.div>
                     </span>
                   )}
@@ -422,7 +422,7 @@ const Contact = () => {
                   isDark ? 'text-gray-400' : 'text-gray-500'
                 }`}
               >
-                <p>I'll never share your information with anyone else.</p>
+                <p>I'll never share your information with anyone else without your consent.</p>
               </motion.div>
             </motion.form>
           </motion.div>

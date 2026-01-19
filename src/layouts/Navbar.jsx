@@ -173,7 +173,7 @@ const Navbar = () => {
             onClick={toggleTheme}
             className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 hover:text-blue-500 dark:hover:text-yellow-400"
             aria-label="Toggle theme"
-            whileHover={{ scale: 1.1, rotate: 15 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             <motion.div

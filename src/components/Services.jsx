@@ -49,36 +49,36 @@ const Services = () => {
       borderColor: 'border-green-300 dark:border-green-600',
       iconColor: 'text-green-500 dark:text-green-400'
     },
-    {
-      icon: <FaRocket className="text-3xl" />,
-      title: 'Deployment & SEO',
-      description: 'Deploying with Netlify/Vercel, SEO optimization & site performance tweaks.',
-      features: ['Vercel', 'Netlify', 'SEO', 'Performance'],
-      color: 'orange',
-      bgColor: 'bg-orange-100 dark:bg-orange-900/20',
-      borderColor: 'border-orange-300 dark:border-orange-600',
-      iconColor: 'text-orange-500 dark:text-orange-400'
-    },
-    {
-      icon: <FaCode className="text-3xl" />,
-      title: 'Code Quality',
-      description: 'Clean, maintainable code with best practices and comprehensive testing.',
-      features: ['Clean Code', 'Testing', 'Documentation', 'Code Review'],
-      color: 'pink',
-      bgColor: 'bg-pink-100 dark:bg-pink-900/20',
-      borderColor: 'border-pink-300 dark:border-pink-600',
-      iconColor: 'text-pink-500 dark:text-pink-400'
-    },
-    {
-      icon: <FaCloud className="text-3xl" />,
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and modern deployment strategies.',
-      features: ['AWS', 'Docker', 'CI/CD', 'Monitoring'],
-      color: 'cyan',
-      bgColor: 'bg-cyan-100 dark:bg-cyan-900/20',
-      borderColor: 'border-cyan-300 dark:border-cyan-600',
-      iconColor: 'text-cyan-500 dark:text-cyan-400'
-    }
+    // {
+    //   icon: <FaRocket className="text-3xl" />,
+    //   title: 'Deployment & SEO',
+    //   description: 'Deploying with Netlify/Vercel, SEO optimization & site performance tweaks.',
+    //   features: ['Vercel', 'Netlify', 'SEO', 'Performance'],
+    //   color: 'orange',
+    //   bgColor: 'bg-orange-100 dark:bg-orange-900/20',
+    //   borderColor: 'border-orange-300 dark:border-orange-600',
+    //   iconColor: 'text-orange-500 dark:text-orange-400'
+    // },
+    // {
+    //   icon: <FaCode className="text-3xl" />,
+    //   title: 'Code Quality',
+    //   description: 'Clean, maintainable code with best practices and comprehensive testing.',
+    //   features: ['Clean Code', 'Testing', 'Documentation', 'Code Review'],
+    //   color: 'pink',
+    //   bgColor: 'bg-pink-100 dark:bg-pink-900/20',
+    //   borderColor: 'border-pink-300 dark:border-pink-600',
+    //   iconColor: 'text-pink-500 dark:text-pink-400'
+    // },
+    // {
+    //   icon: <FaCloud className="text-3xl" />,
+    //   title: 'Cloud Solutions',
+    //   description: 'Scalable cloud infrastructure and modern deployment strategies.',
+    //   features: ['AWS', 'Docker', 'CI/CD', 'Monitoring'],
+    //   color: 'cyan',
+    //   bgColor: 'bg-cyan-100 dark:bg-cyan-900/20',
+    //   borderColor: 'border-cyan-300 dark:border-cyan-600',
+    //   iconColor: 'text-cyan-500 dark:text-cyan-400'
+    // }
   ];
   
   return (
@@ -176,7 +176,7 @@ const Services = () => {
               <MotionLink
                 to="/projects"
                 className={`mt-6 text-sm font-semibold ${service.iconColor} hover:underline`}
-                whileHover={{ x: 5 }}
+                whileHover={{ x: 5  }}
                 transition={{ duration: 0.2 }}
               >
                 Learn More →

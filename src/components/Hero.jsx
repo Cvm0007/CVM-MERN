@@ -149,7 +149,7 @@ const Hero = () => {
 
               {/* Resume Download Button */}
               <motion.a
-                href="/Shivam_Narayan_MERN.pdf"
+                href="/Shivam_React_MERN.pdf"
                 download
                 initial={{ opacity: 1, rotate: 180 }}
                 whileHover={{ scale: 1.05, rotate: 0 }}

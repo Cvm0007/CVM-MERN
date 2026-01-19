@@ -89,7 +89,7 @@ const About = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="./Shivam.png" // Replace with real image
+                  src="./pp.png" // Replaced with real image
                   alt="Shivam Avatar"
                   className="object-cover w-full h-full"
                 />

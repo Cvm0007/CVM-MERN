@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaStar, FaQuoteLeft, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaStar, FaQuoteLeft, FaLinkedin, FaTwitter, FaGithub, FaArrowRight } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
 
 /**
@@ -16,6 +16,7 @@ import { useTheme } from '../contexts/ThemeContext';
  */
 const Testimonials = () => {
   const { isDark } = useTheme();
+  const MotionLink = motion(Link);
   
   // Enhanced testimonials data with detailed information
   const testimonials = [
@@ -26,11 +27,11 @@ const Testimonials = () => {
       avatar: 'AS',
       rating: 5,
       feedback: 'Shivam is a magician! He turned our basic idea into a stunning app with pixel-perfect UI and blazing speed. Highly recommend him!',
-      project: 'E-commerce Platform',
-      duration: '3 months',
+      project: 'Product Listing Platform',
+      duration: '5 weeks',
       social: {
-        linkedin: 'https://linkedin.com/in/ankita-sharma',
-        twitter: 'https://twitter.com/ankitasharma'
+        linkedin: 'https://linkedin.com/in',
+        twitter: 'https://twitter.com'
       }
     },
     {
@@ -40,69 +41,69 @@ const Testimonials = () => {
       avatar: 'RM',
       rating: 5,
       feedback: 'Loved working with Shivam. He is clear, fast, and always professional. His React skills are top-tier and well-tested in our projects.',
-      project: 'SaaS Dashboard',
-      duration: '4 months',
+      project: 'Job Blog Dashboard',
+      duration: '3 weeks',
       social: {
-        linkedin: 'https://linkedin.com/in/ravi-mishra',
-        github: 'https://github.com/ravimishra'
+        linkedin: 'https://linkedin.com/in',
+        github: 'https://github.com'
       }
     },
     {
-      name: 'Simran Raj',
+      name: 'Parth Srivastava',
       role: 'Freelance Client',
-      company: 'Creative Studio',
-      avatar: 'SR',
+      company: 'SpotLight Studio',
+      avatar: 'PS',
       rating: 5,
       feedback: 'Very polite and helpful, and delivered way before the deadline. The animations and responsiveness were beyond expectations.',
       project: 'Portfolio Website',
-      duration: '2 months',
+      duration: '1 weeks',
       social: {
-        linkedin: 'https://linkedin.com/in/simran-raj',
-        twitter: 'https://twitter.com/simranraj'
+        linkedin: 'https://linkedin.com/in',
+        twitter: 'https://twitter.com'
       }
     },
-    {
-      name: 'Amit Kumar',
-      role: 'CTO',
-      company: 'InnovateTech',
-      avatar: 'AK',
-      rating: 5,
-      feedback: 'Exceptional developer with great problem-solving skills. Built our entire MVP in record time with clean, scalable code.',
-      project: 'MVP Development',
-      duration: '6 months',
-      social: {
-        linkedin: 'https://linkedin.com/in/amit-kumar',
-        github: 'https://github.com/amitkumar'
-      }
-    },
-    {
-      name: 'Priya Singh',
-      role: 'Product Designer',
-      company: 'DesignHub',
-      avatar: 'PS',
-      rating: 5,
-      feedback: 'Shivam perfectly translated our designs into code. His attention to detail and understanding of UX principles is impressive.',
-      project: 'Design System',
-      duration: '3 months',
-      social: {
-        linkedin: 'https://linkedin.com/in/priya-singh',
-        twitter: 'https://twitter.com/priyasingh'
-      }
-    },
-    {
-      name: 'John Doe',
-      role: 'Marketing Director',
-      company: 'GrowthCo',
-      avatar: 'JD',
-      rating: 5,
-      feedback: 'Outstanding work on our marketing platform. The site loads instantly and handles thousands of concurrent users without issues.',
-      project: 'Marketing Platform',
-      duration: '5 months',
-      social: {
-        linkedin: 'https://linkedin.com/in/johndoe',
-        twitter: 'https://twitter.com/johndoe'
-      }
-    }
+    // {
+    //   name: 'Amit Kumar',
+    //   role: 'CTO',
+    //   company: 'InnovateTech',
+    //   avatar: 'AK',
+    //   rating: 5,
+    //   feedback: 'Exceptional developer with great problem-solving skills. Built our entire MVP in record time with clean, scalable code.',
+    //   project: 'MVP Development',
+    //   duration: '6 months',
+    //   social: {
+    //     linkedin: 'https://linkedin.com/in/amit-kumar',
+    //     github: 'https://github.com/amitkumar'
+    //   }
+    // },
+    // {
+    //   name: 'Priya Singh',
+    //   role: 'Product Designer',
+    //   company: 'DesignHub',
+    //   avatar: 'PS',
+    //   rating: 5,
+    //   feedback: 'Shivam perfectly translated our designs into code. His attention to detail and understanding of UX principles is impressive.',
+    //   project: 'Design System',
+    //   duration: '3 months',
+    //   social: {
+    //     linkedin: 'https://linkedin.com/in/priya-singh',
+    //     twitter: 'https://twitter.com/priyasingh'
+    //   }
+    // },
+    // {
+    //   name: 'John Doe',
+    //   role: 'Marketing Director',
+    //   company: 'GrowthCo',
+    //   avatar: 'JD',
+    //   rating: 5,
+    //   feedback: 'Outstanding work on our marketing platform. The site loads instantly and handles thousands of concurrent users without issues.',
+    //   project: 'Marketing Platform',
+    //   duration: '5 months',
+    //   social: {
+    //     linkedin: 'https://linkedin.com/in/johndoe',
+    //     twitter: 'https://twitter.com/johndoe'
+    //   }
+    // }
   ];
   
   return (
@@ -128,7 +129,7 @@ const Testimonials = () => {
           <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${
             isDark ? 'text-gray-400' : 'text-gray-600'
           }`}>
-            What my clients say about working with me..
+            What my clients say about working with me.
           </p>
         </motion.div>
 
@@ -302,7 +303,7 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.8 }}
+          transition={{ duration: 0.1, delay: 0.1 }}
           className={`mt-16 p-6 sm:p-8 rounded-2xl text-center ${
             isDark 
               ? 'bg-gradient-to-r from-purple-900/50 to-pink-900/50 border border-purple-700' 
@@ -310,7 +311,7 @@ const Testimonials = () => {
           }`}
         >
           <h3 className={`text-xl sm:text-2xl font-bold mb-4 ${
-            isDark ? 'text-white' : 'text-gray-800'
+            isDark ? 'text-orange-400' : 'text-orange-600'
           }`}>
             Ready to be my next happy client?
           </h3>
@@ -319,10 +320,10 @@ const Testimonials = () => {
           }`}>
             Join the list of satisfied clients who have experienced professional web development services.
           </p>
-          <motion.a
+          <MotionLink
             to="/contact"
-            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg shadow-lg hover:from-purple-700 hover:to-pink-600 hover:shadow-xl transition-all duration-300 font-semibold"
-            whileHover={{ scale: 1.05, y: -2 }}
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg shadow-lg hover:from-purple-700 hover:to-pink-600 hover:shadow-xl transition-all duration-300 font-semibold hover:animate-pulse"
+            whileHover={{ scale: 1.05, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
             Start Your Project
@@ -330,9 +331,9 @@ const Testimonials = () => {
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
             >
-              →
+            <FaArrowRight />
             </motion.div>
-          </motion.a>
+          </MotionLink>
         </motion.div>
       </div>
     </section>

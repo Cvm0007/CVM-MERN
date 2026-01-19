@@ -1,9 +1,11 @@
 // src/components/Skills.jsx
 import React from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from "react";
+import { motion, useMotionValue, animate, useInView } from "framer-motion";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDocker, FaAws, FaFigma, FaPython } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiPostgresql, SiRedis, SiPhp, SiBookstack } from 'react-icons/si';
 import { useTheme } from '../contexts/ThemeContext';
+import Counter from './Counter';
 
 /**
  * Skills Section Component
@@ -389,11 +391,11 @@ const Skills = () => {
             </p>
             
             {/* Learning Progress Indicators */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 ">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 ">
               {[
-                { label: 'Courses Completed', value: '11+', icon: '🎓' },
-                { label: 'Certificates', value: '9+', icon: '🏆' },
-                { label: 'Learning Hours', value: '1007+', icon: '⏰' }
+                { label: 'Courses Completed', value: '10', icon: '🎓' },
+                { label: 'Certificates', value: '9', icon: '🏆' },
+                { label: 'Learning Hours', value: '1008', icon: '⏰' }
               ].map((item, index) => (
                 <motion.div
                   key={item.label}
@@ -410,7 +412,7 @@ const Skills = () => {
                   <div className={`text-xl sm:text-2xl font-bold animate-glow ${
                     isDark ? 'text-purple-400' : 'text-purple-600'
                   }`}>
-                    {item.value}
+                    <Counter value={item.value} />+
                   </div>
                   <div className={`text-xs sm:text-sm ${
                     isDark ? 'text-gray-400' : 'text-gray-600'
@@ -419,7 +421,42 @@ const Skills = () => {
                   </div>
                 </motion.div>
               ))}
+            </div> */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+              {[
+                { label: "Courses Completed", value: 10, icon: "🎓" },
+                { label: "Certificates", value: 9, icon: "🏆" },
+                { label: "Learning Hours", value: 1008, icon: "⏰" },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  className={`p-4 rounded-lg ${isDark ? "bg-gray-700/50" : "bg-gray-100/50"
+                    }`}
+                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="text-2xl mb-2">{item.icon}</div>
+
+                  <div
+                    className={`text-xl sm:text-2xl font-bold animate-glow ${isDark ? "text-purple-400" : "text-purple-600"
+                      }`}
+                  >
+                    <Counter value={item.value} />+
+                  </div>
+
+                  <div
+                    className={`text-xs sm:text-sm ${isDark ? "text-gray-400" : "text-gray-600"
+                      }`}
+                  >
+                    {item.label}
+                  </div>
+                </motion.div>
+              ))}
             </div>
+
           </div>
         </motion.div>
       </div>
