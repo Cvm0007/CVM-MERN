@@ -69,7 +69,7 @@ const Projects = () => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
+      transition={{ delay: index * 0.1, duration: 0.1 }}
       whileHover={{ y: -5, scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={`group rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border ${
@@ -84,6 +84,9 @@ const Projects = () => {
           src={project.image} 
           alt={project.title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          onError={(e) => {
+            e.currentTarget.src = "../lotuss.png"; // Fallback image
+          }}
         />
         
         {/* Featured Badge */}
@@ -160,7 +163,7 @@ const Projects = () => {
               whileInView={{ scale: 1, rotate: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 + i * 0.05, duration: 0.3 }}
-              className={`text-xs px-2 py-1 rounded-md ${
+              className={`text-xs px-2 py-1 rounded-md group-hover:text-purple-600 dark:group-hover:text-purple-400 ${
                 isDark 
                   ? 'bg-gray-700 text-gray-300' 
                   : 'bg-gray-100 text-gray-700'
@@ -183,7 +186,7 @@ const Projects = () => {
           <div className={`flex items-center gap-2 text-xs ${
             isDark ? 'text-gray-500' : 'text-gray-500'
           }`}>
-            <FaCalendar />
+            <FaCalendar className='text-orange-400'/>
             {new Date(project.date).toLocaleDateString('en-US', { 
               year: 'numeric', 
               month: 'short' 
@@ -451,7 +454,7 @@ const Projects = () => {
             Technologies & Tools
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
-            {['React', 'Node.js', 'MongoDB', 'Express', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Socket.io', 'Docker', 'AWS'].map((tech, index) => (
+            {['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'PostgreSQL', 'Docker', 'AWS'].map((tech, index) => (
               <motion.span
                 key={index}
                 initial={{ scale: 0, rotate: -180 }}

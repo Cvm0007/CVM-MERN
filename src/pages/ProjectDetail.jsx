@@ -76,11 +76,14 @@ const ProjectDetail = () => {
           className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700"
         >
           {/* Hero Image */}
-          <div className="relative h-64 md:h-96 overflow-hidden">
+          <div className="relative w-full h-64 md:h-96 overflow-hidden">
             <img 
-              src={project.image} 
+              src={project.image.startsWith('./') ? project.image.replace('./', '../') : project.image} 
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover z-0"
+              onError={(e) => {
+                e.currentTarget.src = "../lotuss.png"; // Fallback image
+              }}
             />
             {project.featured && (
               <div className="absolute top-6 right-6 bg-gradient-to-r from-purple-600 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
@@ -173,7 +176,7 @@ const ProjectDetail = () => {
                       href={project.liveDemo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white px-4 py-3 rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 font-medium"
+                      className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white px-4 py-3 rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 font-medium inline-block transition-transform duration-300 hover:rotate-2"
                     >
                       <FaExternalLinkAlt />
                       Live Demo
@@ -233,8 +236,8 @@ const ProjectDetail = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-12"
         >
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-            Related Projects
+          <h2 className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-6 text-center">
+            Related Category
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {projectsData
@@ -247,7 +250,7 @@ const ProjectDetail = () => {
                   className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
                 >
                   <img 
-                    src={relatedProject.image} 
+                    src={relatedProject.image.startsWith('./') ? relatedProject.image.replace('./', '../') : relatedProject.image} 
                     alt={relatedProject.title}
                     className="w-full h-32 object-cover"
                   />

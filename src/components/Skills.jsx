@@ -34,16 +34,16 @@ const Skills = () => {
       bgColor: 'bg-orange-100 dark:bg-orange-900/20',
       borderColor: 'border-orange-300 dark:border-orange-600'
     },
-    { 
-      icon: <FaCss3Alt />, 
-      name: 'CSS3', 
-      category: 'Frontend',
-      level: 64,
-      color: 'text-blue-500', 
-      darkColor: 'text-blue-400',
-      bgColor: 'bg-blue-100 dark:bg-blue-900/20',
-      borderColor: 'border-blue-300 dark:border-blue-600'
-    },
+    // { 
+    //   icon: <FaCss3Alt />, 
+    //   name: 'CSS3', 
+    //   category: 'Frontend',
+    //   level: 64,
+    //   color: 'text-blue-500', 
+    //   darkColor: 'text-blue-400',
+    //   bgColor: 'bg-blue-100 dark:bg-blue-900/20',
+    //   borderColor: 'border-blue-300 dark:border-blue-600'
+    // },
     { 
       icon: <FaJs />, 
       name: 'JavaScript', 
@@ -391,37 +391,6 @@ const Skills = () => {
             </p>
             
             {/* Learning Progress Indicators */}
-            {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 ">
-              {[
-                { label: 'Courses Completed', value: '10', icon: '🎓' },
-                { label: 'Certificates', value: '9', icon: '🏆' },
-                { label: 'Learning Hours', value: '1008', icon: '⏰' }
-              ].map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  className={`p-4 rounded-lg ${
-                    isDark ? 'bg-gray-700/50' : 'bg-gray-100/50'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.0 + index * 0.1 }}
-                >
-                  <div className="text-2xl mb-2">{item.icon}</div>
-                  <div className={`text-xl sm:text-2xl font-bold animate-glow ${
-                    isDark ? 'text-purple-400' : 'text-purple-600'
-                  }`}>
-                    <Counter value={item.value} />+
-                  </div>
-                  <div className={`text-xs sm:text-sm ${
-                    isDark ? 'text-gray-400' : 'text-gray-600'
-                  }`}>
-                    {item.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div> */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
               {[
                 { label: "Courses Completed", value: 10, icon: "🎓" },
