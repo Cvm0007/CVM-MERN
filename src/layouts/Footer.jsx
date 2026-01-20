@@ -60,11 +60,11 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <h4 className="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-3">Go To Page</h4>
-          <ul className="space-y-2">
+          <ul className="space-y-2 ">
             <li><Link to="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Home</Link></li>
             <li><Link to="/projects" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Projects</Link></li>
             <li><Link to="/blog" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Blogs</Link></li>
-            <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Contacts</Link></li>
+            <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</Link></li>
           </ul>
         </motion.div>
 
@@ -77,9 +77,9 @@ const Footer = () => {
         >
           <h4 className="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-3">Useful Links</h4>
           <ul className="space-y-2">
-            <li><a href="/disclaimer" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Disclaimer</a></li>
-            <li><a href="/privacy-policy" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Privacy Policy</a></li>
-            <li><a href="/terms" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Terms & Conditions</a></li>
+            <li><Link to="/disclaimer" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Disclaimer</Link></li>
+            <li><Link to="/privacy-policy" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Terms & Conditions</Link></li>
           </ul>
         </motion.div>
 
@@ -135,8 +135,8 @@ const Footer = () => {
         transition={{ delay: 0.6 }}
         viewport={{ once: true }}
       >
-        © {new Date().getFullYear()} All rights reserved • Designed & Developed by{" "}
-        <span className="text-purple-600 dark:text-purple-400 font-semibold">CVM</span> <br/>
+        <span>© {new Date().getFullYear()} All rights reserved • Designed & Developed by{" "}</span>
+        <span className="text-purple-600 dark:text-orange-400 font-semibold">CVM</span> <br/>
         <span className=""> Made with <span className="animate-pulse">❤️</span> in India 🇮🇳 </span>
 
         <WhatsAppChat />

@@ -53,7 +53,7 @@ const Login = () => {
             <div className="flex items-center space-x-2">
               <FaCode className="text-3xl text-purple-600 dark:text-purple-400" />
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                Shivam.Dev
+                CVM MERN.
               </span>
             </div>
           </div>
@@ -105,7 +105,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed hover:rotate-2 hover:animate-pulse"
             >
               {isLoading ? 'Logging in...' : 'Login'}
             </button>

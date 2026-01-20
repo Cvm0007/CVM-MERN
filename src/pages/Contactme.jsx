@@ -104,7 +104,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Location</h3>
-                    <p className="text-gray-600 dark:text-gray-400">Bihar, India</p>
+                    <p className="text-gray-600 dark:text-gray-400">Gurugram, HR (122001) - India</p>
                     <p className="text-sm text-gray-500 dark:text-gray-500">Open to remote opportunities</p>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ const Contact = () => {
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Connect on Social</h3>
                 <div className="flex gap-4">
                   <a
-                    href="https://linkedin.com/in/shivam-narayan-mern"
+                    href="https://linkedin.com/in/cvm-mern"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors"
@@ -162,7 +162,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                        placeholder="John Doe"
+                        placeholder="Cvm Mern"
                       />
                     </div>
                   </div>
@@ -180,7 +180,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                        placeholder="john@example.com"
+                        placeholder="cvm@example.com"
                       />
                     </div>
                   </div>
@@ -211,14 +211,14 @@ const Contact = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
-                    placeholder="Tell me about your project..."
+                    placeholder="Tell me about your project or just say Hi..."
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transition-transform duration-300 hover:animate-pulse hover:scale-105 hover:rotate-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -252,7 +252,7 @@ const Contact = () => {
           className="mt-16 text-center"
         >
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-xl font-bold text-orange-400 dark:text-orange-600 mb-6">
               Quick Links
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
@@ -268,12 +268,12 @@ const Contact = () => {
               >
                 Read Blog
               </Link>
-              <a
-                href="/privacy-policy"
+              <Link
+                to="/privacy-policy"
                 className="px-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 font-medium"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>
