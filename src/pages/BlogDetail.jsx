@@ -14,6 +14,7 @@ import {
 } from 'react-icons/fa';
 import blogsData from '../data/blogs.json';
 import GoToTop from '../components/GoToTop';
+import { style } from 'framer-motion/client';
 
 const BlogDetail = () => {
   const { slug } = useParams();
@@ -121,15 +122,15 @@ const BlogDetail = () => {
             </div>
           </div>
 
-          {/* Blog Meta */}
+          {/* Blog Meta-Data */}
           <div className="p-8">
             <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400 mb-6">
               <span className="flex items-center gap-2">
-                <FaUser />
+                <FaUser className='text-green-400'/>
                 {blog.author}
               </span>
               <span className="flex items-center gap-2">
-                <FaCalendar />
+                <FaCalendar className='text-orange-400'/>
                 {new Date(blog.date).toLocaleDateString('en-US', { 
                   year: 'numeric', 
                   month: 'long', 
@@ -137,7 +138,7 @@ const BlogDetail = () => {
                 })}
               </span>
               <span className="flex items-center gap-2">
-                <FaClock />
+                <FaClock className='text-blue-400'/>
                 {blog.readTime}
               </span>
             </div>
@@ -147,7 +148,7 @@ const BlogDetail = () => {
               {blog.tags.map((tag, index) => (
                 <Link
                   key={index}
-                  to={`/blog?tag=${tag}`}
+                  to={`/blog`}
                   className="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium hover:from-purple-200 hover:to-pink-200 dark:hover:from-purple-900/50 dark:hover:to-pink-900/50 transition-all"
                 >
                   #{tag}
@@ -172,16 +173,18 @@ const BlogDetail = () => {
                 <div className="flex items-center gap-4">
                   <button
                     onClick={shareBlog}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors hover:text-purple-400 dark:hover:text-purple-400"
                   >
                     <FaShare />
                     Share
                   </button>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                  <button 
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                     <FaHeart />
                     Like
                   </button>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                  <button 
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                     <FaComment />
                     Comment
                   </button>
@@ -261,7 +264,7 @@ const BlogDetail = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
             />
-            <button className="px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+            <button className="px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors hover:text-orange-600 transition-transform duration-300 hover:rotate-3 hover:scale-105">
               Subscribe
             </button>
           </div>

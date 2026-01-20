@@ -68,6 +68,33 @@ const Blog = () => {
     return filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
   }, [selectedTag, showFeaturedOnly, searchTerm]);
 
+  // Featured blog and Pagination states
+  const FEATURED_PER_PAGE = 3;
+  const [featuredPage, setFeaturedPage] = useState(1);
+
+  const featuredBlogs = filteredBlogs.filter(blog => blog.featured);
+  const totalFeaturedPages = Math.ceil(featuredBlogs.length / FEATURED_PER_PAGE);
+
+  const paginatedFeaturedBlogs = featuredBlogs.slice(
+    (featuredPage - 1) * FEATURED_PER_PAGE,
+    featuredPage * FEATURED_PER_PAGE
+  );
+
+  // All blogs and pagination states
+  const ALL_BLOGS_PER_PAGE = 6;
+  const [allBlogsPage, setAllBlogsPage] = useState(1);
+
+  const nonFeaturedBlogs = filteredBlogs.filter(blog => !blog.featured);
+
+  const totalAllBlogsPages = Math.ceil(
+    nonFeaturedBlogs.length / ALL_BLOGS_PER_PAGE
+  );
+
+  const paginatedAllBlogs = nonFeaturedBlogs.slice(
+    (allBlogsPage - 1) * ALL_BLOGS_PER_PAGE,
+    allBlogsPage * ALL_BLOGS_PER_PAGE
+  );
+
   // Clear all filters
   const clearFilters = () => {
     setSelectedTag('All');
@@ -298,7 +325,8 @@ const Blog = () => {
                 Filter by tags:
               </span>
               <div className="flex flex-wrap gap-2">
-                {tags.map(tag => (
+                {tags.slice(0,11).map(tag => (
+                  
                   <motion.button
                     key={tag}
                     onClick={() => setSelectedTag(tag)}
@@ -371,7 +399,7 @@ const Blog = () => {
         </motion.div>
 
         {/* Featured Blog */}
-        {filteredBlogs.filter(blog => blog.featured).length > 0 && (
+        {featuredBlogs.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -379,9 +407,9 @@ const Blog = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mb-12"
           >
-            <h2 className={`text-2xl sm:text-3xl font-bold mb-6 flex items-center gap-2 ${
-              isDark ? 'text-white' : 'text-gray-800'
-            }`}>
+            {/* Heading */}
+            <h2 className={`text-2xl sm:text-3xl font-bold mb-6 flex items-center gap-2 ${isDark ? "text-white" : "text-gray-800"
+              }`}>
               <motion.div
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
@@ -390,19 +418,77 @@ const Blog = () => {
               </motion.div>
               Featured Article
             </h2>
+
+            {/* Featured Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {filteredBlogs.filter(blog => blog.featured).slice(0, 1).map((blog, index) => (
-                <BlogCard key={blog.id} blog={blog} index={index} featured={true} />
+              {paginatedFeaturedBlogs.map((blog, index) => (
+                <BlogCard key={blog.id} blog={blog} index={index} featured />
               ))}
             </div>
+
+            {/* Pagination */}
+            {totalFeaturedPages > 1 && (
+              <div className="mt-8 flex justify-center">
+                <div className="flex gap-3 overflow-x-auto px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 backdrop-blur-sm scrollbar-hide">
+                  {Array.from({ length: totalFeaturedPages }).map((_, i) => {
+                    const page = i + 1;
+                    return (
+                      <button
+                        key={page}
+                        onClick={() => setFeaturedPage(page)}
+                        className={`min-w-[40px] h-10 rounded-full font-semibold transition-all ${featuredPage === page
+                            ? "bg-purple-600 text-white scale-110"
+                            : "bg-white/20 text-gray-600 dark:text-gray-300 hover:bg-purple-500 hover:text-white"
+                          }`}
+                      >
+                        {page}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </motion.div>
         )}
 
-        {/* All Blogs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
-          {filteredBlogs.filter(blog => !blog.featured).map((blog, index) => (
-            <BlogCard key={blog.id} blog={blog} index={index} />
-          ))}
+        {/* All Blogs Section */}
+        <div className="mb-12">
+          <h2
+            className={`text-2xl sm:text-3xl font-bold mb-6 ${isDark ? "text-white" : "text-gray-800"
+              }`}
+          >
+            All Blogs
+          </h2>
+
+          {/* Blog Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {paginatedAllBlogs.map((blog, index) => (
+              <BlogCard key={blog.id} blog={blog} index={index} />
+            ))}
+          </div>
+
+          {/* Pagination */}
+          {totalAllBlogsPages > 1 && (
+            <div className="mt-8 flex justify-center">
+              <div className="flex gap-3 overflow-x-auto px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 backdrop-blur-sm scrollbar-hide">
+                {Array.from({ length: totalAllBlogsPages }).map((_, i) => {
+                  const page = i + 1;
+                  return (
+                    <button
+                      key={page}
+                      onClick={() => setAllBlogsPage(page)}
+                      className={`min-w-[40px] h-10 rounded-full font-semibold transition-all ${allBlogsPage === page
+                          ? "bg-purple-600 text-white scale-110"
+                          : "bg-white/20 text-gray-600 dark:text-gray-300 hover:bg-purple-500 hover:text-white"
+                        }`}
+                    >
+                      {page}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* No Results */}
@@ -466,7 +552,7 @@ const Blog = () => {
             Popular Topics
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
-            {['React', 'JavaScript', 'TypeScript', 'Node.js', 'CSS', 'Performance', 'Security'].map((tag, index) => (
+            {['Frontend', 'Responsive Design', 'SEO', 'Authentication', 'Async Programming', 'Security', 'MongoDB'].map((tag, index) => (
               <motion.button
                 key={index}
                 onClick={() => setSelectedTag(tag)}

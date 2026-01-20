@@ -56,6 +56,19 @@ const Projects = () => {
     return filtered;
   }, [selectedCategory, showFeaturedOnly, searchTerm]);
 
+  // All blogs and pagination states
+  const PROJECTS_PER_PAGE = 6;
+  const [projectsPage, setProjectsPage] = useState(1);
+
+  const totalProjectsPages = Math.ceil(
+    filteredProjects.length / PROJECTS_PER_PAGE
+  );
+
+  const paginatedProjects = filteredProjects.slice(
+    (projectsPage - 1) * PROJECTS_PER_PAGE,
+    projectsPage * PROJECTS_PER_PAGE
+  );
+
   // Clear all filters
   const clearFilters = () => {
     setSelectedCategory('All');
@@ -386,11 +399,44 @@ const Projects = () => {
           </motion.div>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
+        {/* Projects Section */}
+        <div className="mb-12">
+          <h2
+            className={`text-2xl sm:text-3xl font-bold mb-6 ${isDark ? "text-white" : "text-gray-800"
+              }`}
+          >
+          Projects & Applications
+          </h2>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {paginatedProjects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+
+          {/* Pagination */}
+          {totalProjectsPages > 1 && (
+            <div className="mt-8 flex justify-center">
+              <div className="flex gap-3 overflow-x-auto px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 backdrop-blur-sm scrollbar-hide">
+                {Array.from({ length: totalProjectsPages }).map((_, i) => {
+                  const page = i + 1;
+                  return (
+                    <button
+                      key={page}
+                      onClick={() => setProjectsPage(page)}
+                      className={`min-w-[40px] h-10 rounded-full font-semibold transition-all ${projectsPage === page
+                          ? "bg-purple-600 text-white scale-110"
+                          : "bg-white/20 text-gray-600 dark:text-gray-300 hover:bg-purple-500 hover:text-white"
+                        }`}
+                    >
+                      {page}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* No Results */}
