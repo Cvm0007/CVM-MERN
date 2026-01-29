@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaQuoteRight, FaQuoteLeft } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaQuoteRight, FaQuoteLeft, FaHome,FaProjectDiagram, FaBlog, FaEnvelopeOpen } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import GoToTop from "../components/GoToTop";
@@ -61,10 +61,10 @@ const Footer = () => {
         >
           <h4 className="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-3">Go To Page</h4>
           <ul className="space-y-2 ">
-            <li><Link to="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Home</Link></li>
-            <li><Link to="/projects" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Projects</Link></li>
-            <li><Link to="/blog" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Blogs</Link></li>
-            <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</Link></li>
+            <li><Link to="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition"><FaHome size={16} className="inline mr-1" /> Home</Link></li>
+            <li><Link to="/projects" className="hover:text-purple-600 dark:hover:text-purple-400 transition"><FaProjectDiagram size={14} className="inline mr-1" /> Projects</Link></li>
+            <li><Link to="/blog" className="hover:text-purple-600 dark:hover:text-purple-400 transition"><FaBlog size={14} className="inline mr-1" /> Blogs</Link></li>
+            <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition"><FaEnvelopeOpen size={14} className="inline mr-1" /> Contact</Link></li>
           </ul>
         </motion.div>
 
@@ -92,7 +92,7 @@ const Footer = () => {
         >
           <h4 className="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-3">Contact</h4>
           <p>
-            Email: <a href="mailto:mahtha.s@gmail.com" className="text-purple-600 dark:text-purple-400 hover:underline">mahtha.s@gmail.com</a>
+            Email: <a href="mailto:cvm.mern@gmail.com" className="text-purple-600 dark:text-purple-400 hover:underline">cvm.mern@gmail.com</a>
           </p>
           <p>
             Phone: <a href="tel:+919876543210" className="text-purple-600 dark:text-purple-400 hover:underline">+91 8092604468</a>
@@ -113,7 +113,7 @@ const Footer = () => {
               <FaLinkedin />
             </a>
             <a
-              href="mailto:mahtha.s@gmail.com"
+              href="mailto:cvm.mern@gmail.com"
               className="text-gray-500 hover:text-red-700 transition-all duration-300 hover:scale-110 animate-pulse"
             >
               <FaEnvelope />

@@ -11,7 +11,12 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaBars,
-  FaTimes
+  FaTimes,
+  FaHome,
+  FaProjectDiagram,
+  FaBlog,
+  FaEnvelopeOpen,
+  FaDharmachakra
 } from "react-icons/fa";
 import { useTheme } from "../contexts/ThemeContext";
 import { useAuth } from "../contexts/AuthContext";
@@ -111,25 +116,25 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu - Enhanced with better spacing */}
-        <ul className="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <ul className="hidden md:flex items-center space-x-1 lg:space-x-2 ">
           <li>
             <NavLink to="/" className={linkClasses}>
-              Home
+              <FaHome size={20} className="inline mr-1 hover:scale-110 transition-all duration-300" />
             </NavLink>
           </li>
           <li>
             <NavLink to="/projects" className={linkClasses}>
-              Projects
+              <FaProjectDiagram size={20} className="inline mr-1 hover:scale-110 transition-all duration-300" />
             </NavLink>
           </li>
           <li>
             <NavLink to="/blog" className={linkClasses}>
-              Blogs
+              <FaBlog size={20} className="inline mr-1 hover:scale-110 transition-all duration-300" />
             </NavLink>
           </li>
           <li>
             <NavLink to="/contact" className={linkClasses}>
-              Contact
+              <FaEnvelopeOpen size={20} className="inline mr-1 hover:scale-110 transition-all duration-300" />
             </NavLink>
           </li>
         </ul>
@@ -159,7 +164,7 @@ const Navbar = () => {
               <FaLinkedin size={20} />
             </motion.a>
             <motion.a
-              href="mailto:mahtha.s@gmail.com"
+              href="mailto:cvm.mern@gmail.com"
               className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
@@ -231,12 +236,12 @@ const Navbar = () => {
           ) : (
             <motion.button
               onClick={handleLogin}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 text-orange-400 rounded-lg transition-all duration-300 bg-gray-100 dark:bg-gray-800 text-orange-500 dark:text-orange-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+              whileHover={{ scale: 1.05, rotate: -10 }}
               whileTap={{ scale: 0.95 }}
             >
-              <FaUser size={16} />
-              <span className="hidden sm:block">Login</span>
+              {/* <FaUser size={16} /> */}
+              <FaDharmachakra size={24} />
             </motion.button>
           )}
 
