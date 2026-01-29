@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 import Lottie from 'lottie-react';
 import devAnimation from '../assets/dev-lottie.json';
@@ -122,7 +122,7 @@ const Hero = () => {
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
                   >
-                    →
+                    <FaArrowRight />
                   </motion.span>
                 </span>
               </MotionLink>
@@ -142,14 +142,14 @@ const Hero = () => {
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
-                  > →
+                  > <FaArrowRight />
                   </motion.span>
                 </span>
               </MotionLink>
 
               {/* Resume Download Button */}
               <motion.a
-                href="/Shivam_React_MERN.pdf"
+                href="/Shivam_JS_React_MERN.pdf"
                 download
                 initial={{ opacity: 1, rotate: 180 }}
                 whileHover={{ scale: 1.05, rotate: 0 }}
@@ -177,7 +177,7 @@ const Hero = () => {
               {[
                 { href: "https://github.com/Cvm0007", icon: <FaGithub />, color: isDark ? 'text-gray-400 hover:text-white' : 'text-gray-700 hover:text-black' },
                 { href: "https://linkedin.com/in/cvm-mern", icon: <FaLinkedin />, color: 'text-blue-600 hover:text-blue-800' },
-                { href: "mailto:mahtha.s@gmail.com", icon: <FaEnvelope />, color: 'text-red-500 hover:text-red-700' }
+                { href: "mailto:cvm.mern@gmail.com", icon: <FaEnvelope />, color: 'text-red-500 hover:text-red-700' }
               ].map((social, index) => (
                 <motion.a
                   key={social.href}

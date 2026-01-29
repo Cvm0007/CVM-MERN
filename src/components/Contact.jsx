@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaArrowRight } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaArrowRight, FaProjectDiagram } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
 
 /**
@@ -47,8 +47,8 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       label: 'Email',
-      value: 'mahtha.s@gmail.com',
-      href: 'mailto:mahtha.s@gmail.com',
+      value: 'cvm.mern@gmail.com',
+      href: 'mailto:cvm.mern@gmail.com',
       color: 'blue'
     },
     {
@@ -82,8 +82,8 @@ const Contact = () => {
       color: 'blue'
     },
     {
-      icon: FaTwitter,
-      href: 'https:cvm-mernn.netlify.app/',
+      icon: FaProjectDiagram,
+      href: 'https:cvm-mernn.netlify.app',
       label: 'Twitter',
       color: 'sky'
     }
@@ -308,7 +308,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Mukesh Amwani"
+                    placeholder="Shivam N"
                     required
                     whileFocus={{ scale: 1.02 }}
                     className={`w-full px-4 py-3 sm:py-4 rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 text-base sm:text-lg ${
@@ -337,7 +337,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="mukesh.a@example.com"
+                    placeholder="mern@example.com"
                     required
                     whileFocus={{ scale: 1.02 }}
                     className={`w-full px-4 py-3 sm:py-4 rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 text-base sm:text-lg ${

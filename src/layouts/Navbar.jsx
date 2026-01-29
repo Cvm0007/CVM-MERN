@@ -119,7 +119,7 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center space-x-1 lg:space-x-2 ">
           <li>
             <NavLink to="/" className={linkClasses}>
-              <FaHome size={20} className="inline mr-1 hover:scale-110 transition-all duration-300" />
+              <FaHome size={22} className="inline mr-1 hover:scale-110 transition-all duration-300" />
             </NavLink>
           </li>
           <li>
@@ -282,8 +282,11 @@ const Navbar = () => {
               <ul className="flex flex-col space-y-2 font-medium text-lg">
                 {[
                   { to: '/', label: 'Home' },
+
                   { to: '/projects', label: 'Projects' },
+
                   { to: '/blog', label: 'Blogs' },
+
                   { to: '/contact', label: 'Contact' }
                 ].map((item, index) => (
                   <motion.li
@@ -313,7 +316,7 @@ const Navbar = () => {
                 {[
                   { href: "https://github.com", icon: <FaGithub size={24} /> },
                   { href: "https://linkedin.com", icon: <FaLinkedin size={24} /> },
-                  { href: "mailto:contact@shivam.dev", icon: <FaEnvelope size={24} /> }
+                  { href: "mailto:cvm.mern@gmail.com", icon: <FaEnvelope size={24} /> }
                 ].map((social, index) => (
                   <motion.a
                     key={social.href}
