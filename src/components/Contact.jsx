@@ -83,8 +83,8 @@ const Contact = () => {
     },
     {
       icon: FaProjectDiagram,
-      href: 'https:cvm-mernn.netlify.app',
-      label: 'Twitter',
+      href: 'https://cvm-mernn.netlify.app',
+      label: 'Portfolio',
       color: 'sky'
     }
   ];
