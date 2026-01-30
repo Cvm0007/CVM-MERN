@@ -140,7 +140,7 @@ const Testimonials = () => {
               key={testimonial.name}
               className={`group relative p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
                 isDark 
-                  ? 'bg-gray-800/60 backdrop-blur-sm border-gray-700 hover:border-purple-600' 
+                  ? 'bg-gray-800/60 backdrop-blur-none sm:backdrop-blur-sm border-gray-700 hover:border-purple-600' 
                   : 'bg-white border-gray-200 hover:border-purple-300'
               }`}
               whileHover={{ scale: 1.02, y: -5 }}

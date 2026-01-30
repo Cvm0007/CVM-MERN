@@ -124,7 +124,7 @@ const Projects = () => {
           <div className="flex gap-2">
             <Link
               to={`/project/${project.id}`}
-              className="flex-1 flex items-center justify-center gap-2 bg-white/90 backdrop-blur-sm text-gray-900 px-3 py-2 rounded-lg hover:bg-white transition-colors text-sm font-medium shadow-lg"
+              className="flex-1 flex items-center justify-center gap-2 bg-white/90 backdrop-blur-none sm:backdrop-blur-sm text-gray-900 px-3 py-2 rounded-lg hover:bg-white transition-colors text-sm font-medium shadow-lg"
             >
               <FaExternalLinkAlt size={12} />
               Details
@@ -133,7 +133,7 @@ const Projects = () => {
               href={project.githubRepo}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 bg-white/90 backdrop-blur-sm text-gray-900 rounded-lg hover:bg-white transition-colors shadow-lg"
+              className="p-2 bg-white/90 backdrop-blur-none sm:backdrop-blur-sm text-gray-900 rounded-lg hover:bg-white transition-colors shadow-lg"
               aria-label="GitHub Repository"
             >
               <FaGithub size={16} />

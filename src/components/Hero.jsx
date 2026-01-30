@@ -26,7 +26,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className={`min-h-screen flex items-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 transition-colors duration-300 ${
+      className={`relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 transition-colors duration-300 ${
         isDark 
           ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' 
           : 'bg-gradient-to-br from-orange-100 via-pink-100 to-violet-100'
@@ -133,8 +133,8 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg shadow hover:shadow-md transition-all duration-300 text-center hover:animate-pulse ${
                   isDark 
-                    ? 'text-purple-500 border-2 border-purple-400 bg-gray-800/60 backdrop-blur-md hover:bg-gray-700' 
-                    : 'text-purple-700 border-2 border-purple-400 bg-white/60 backdrop-blur-md hover:bg-purple-100'
+                    ? 'text-purple-500 border-2 border-purple-400 bg-gray-800/60 backdrop-blur-none sm:backdrop-blur-md hover:bg-gray-700' 
+                    : 'text-purple-700 border-2 border-purple-400 bg-white/60 backdrop-blur-none sm:backdrop-blur-md hover:bg-purple-100'
                 }`}
               >
                 <span className="flex items-center justify-center gap-2">
@@ -156,8 +156,8 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg shadow hover:shadow-md transition-all duration-300 text-center animate-glow ${
                   isDark 
-                    ? 'text-green-300 border-2 border-green-400 bg-gray-800/60 backdrop-blur-md hover:bg-gray-700' 
-                    : 'text-green-700 border-2 border-green-400 bg-white/60 backdrop-blur-md hover:bg-green-100'
+                    ? 'text-green-300 border-2 border-green-400 bg-gray-800/60 backdrop-blur-none sm:backdrop-blur-md hover:bg-gray-700' 
+                    : 'text-green-700 border-2 border-green-400 bg-white/60 backdrop-blur-none sm:backdrop-blur-md hover:bg-green-100'
                 }`}
               >
                 <span className="flex items-center justify-center gap-2">
@@ -208,8 +208,8 @@ const Hero = () => {
             <motion.div
               className={`w-full max-w-sm sm:max-w-md mx-auto rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 ${
                 isDark 
-                  ? 'shadow-purple-800/50 bg-gray-800/60 backdrop-blur-sm' 
-                  : 'shadow-purple-300 bg-white/60 backdrop-blur-sm'
+                  ? 'shadow-purple-800/50 bg-gray-800/60 backdrop-blur-none sm:backdrop-blur-sm' 
+                  : 'shadow-purple-300 bg-white/60 backdrop-blur-none sm:backdrop-blur-sm'
               }`}
               whileHover={{ scale: 1.02, rotate: 1 }}
               transition={{ duration: 0.3 }}
@@ -225,9 +225,9 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator (hidden on small screens) */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="hidden sm:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5 }}

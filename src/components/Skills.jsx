@@ -290,7 +290,7 @@ const Skills = () => {
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
-                    className={`group relative p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${skill.bgColor} ${skill.borderColor} backdrop-blur-sm hover:animate-pulse`}
+                    className={`group relative p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${skill.bgColor} ${skill.borderColor} backdrop-blur-none sm:backdrop-blur-sm hover:animate-pulse`}
                     whileHover={{ scale: 1.05, y: -5 }}
                     whileTap={{ scale: 0.98 }}
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -375,7 +375,7 @@ const Skills = () => {
             isDark 
               ? 'bg-gray-800/50 border border-gray-700' 
               : 'bg-white/70 border border-gray-200'
-          } backdrop-blur-sm`}
+            } backdrop-blur-none sm:backdrop-blur-sm`}
         >
           <div className="text-center">
             <h4 className={`text-xl sm:text-2xl font-bold mb-4 ${

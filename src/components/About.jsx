@@ -91,6 +91,7 @@ const About = () => {
                 <img
                   src="./pp.png" // Replaced with real image
                   alt="Shivam Avatar"
+                  loading="lazy"
                   className="object-cover w-full h-full"
                 />
                 

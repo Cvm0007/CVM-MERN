@@ -137,7 +137,7 @@ const Contact = () => {
                   href={info.href}
                   className={`group flex items-center gap-4 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:animate-pulse ${
                     isDark 
-                      ? 'bg-gray-800/60 backdrop-blur-sm border border-gray-700 hover:border-purple-600' 
+                      ? 'bg-gray-800/60 backdrop-blur-none sm:backdrop-blur-sm border border-gray-700 hover:border-purple-600' 
                       : 'bg-white border border-gray-200 hover:border-orange-300'
                   }`}
                   whileHover={{ scale: 1.02, x: 5 }}
@@ -189,9 +189,9 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className={`p-6 sm:p-8 rounded-xl ${
+                className={`p-6 sm:p-8 rounded-xl ${
                 isDark 
-                  ? 'bg-gray-800/60 backdrop-blur-sm border border-gray-700' 
+                  ? 'bg-gray-800/60 backdrop-blur-none sm:backdrop-blur-sm border border-gray-700' 
                   : 'bg-white border border-gray-200'
               }`}
             >
@@ -261,7 +261,7 @@ const Contact = () => {
               onSubmit={handleSubmit}
               action="https://formsubmit.co/mahtha.s@gmail.com"
               method="POST"
-              className={`p-6 sm:p-8 rounded-2xl shadow-lg backdrop-blur-lg border ${
+              className={`p-6 sm:p-8 rounded-2xl shadow-lg backdrop-blur-none sm:backdrop-blur-lg border ${
                 isDark 
                   ? 'bg-gray-800/60 border-gray-700' 
                   : 'bg-white bg-opacity-90 border-orange-200'

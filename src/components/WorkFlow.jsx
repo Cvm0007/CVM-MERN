@@ -139,7 +139,7 @@ const Workflow = () => {
 
               {/* Step Card */}
               <motion.div
-                className={`relative flex-1 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${step.bgColor} ${step.borderColor} backdrop-blur-sm lg:ml-16`}
+                className={`relative flex-1 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${step.bgColor} ${step.borderColor} backdrop-blur-none sm:backdrop-blur-sm lg:ml-16`}
                 whileHover={{ scale: 1.02, y: -5 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -231,7 +231,7 @@ const Workflow = () => {
             isDark 
               ? 'bg-gray-800/50 border border-gray-700' 
               : 'bg-white/70 border border-gray-200'
-          } backdrop-blur-sm`}
+          } backdrop-blur-none sm:backdrop-blur-sm`}
         >
           <div className="text-center">
             <h3 className={`text-xl sm:text-2xl font-bold mb-4 ${

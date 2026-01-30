@@ -113,7 +113,7 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className={`group relative p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${service.bgColor} ${service.borderColor} backdrop-blur-sm`}
+              className={`group relative p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${service.bgColor} ${service.borderColor} backdrop-blur-none sm:backdrop-blur-sm`}
               whileHover={{ scale: 1.03, y: -10 }}
               whileTap={{ scale: 0.98 }}
               initial={{ opacity: 0, y: 50 }}

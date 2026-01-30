@@ -89,7 +89,7 @@ const Navbar = () => {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 shadow-lg border-b border-gray-200 dark:border-gray-700"
+      className="fixed top-0 left-0 w-full z-50 backdrop-blur-none sm:backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 shadow-lg border-b border-gray-200 dark:border-gray-700"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         {/* Logo and Tagline - Enhanced mobile layout */}
@@ -277,7 +277,7 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="md:hidden overflow-hidden"
           >
-            <div className="px-4 sm:px-6 pb-6 pt-4 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-inner border-t border-gray-200 dark:border-gray-700">
+            <div className="px-4 sm:px-6 pb-6 pt-4 bg-white/95 dark:bg-gray-900/95 backdrop-blur-none sm:backdrop-blur-md shadow-inner border-t border-gray-200 dark:border-gray-700">
               {/* Mobile Navigation Links - Enhanced spacing */}
               <ul className="flex flex-col space-y-2 font-medium text-lg">
                 {[

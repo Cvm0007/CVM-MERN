@@ -146,7 +146,7 @@ const Blog = () => {
         <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Link
             to={`/blog/${blog.slug}`}
-            className="flex items-center justify-center gap-2 bg-white/90 backdrop-blur-sm text-gray-900 px-4 py-2 rounded-lg hover:bg-white transition-colors text-sm font-medium shadow-lg"
+            className="flex items-center justify-center gap-2 bg-white/90 backdrop-blur-none sm:backdrop-blur-sm text-gray-900 px-4 py-2 rounded-lg hover:bg-white transition-colors text-sm font-medium shadow-lg"
           >
             <FaArrowRight />
             Read Article
@@ -429,7 +429,7 @@ const Blog = () => {
             {/* Pagination */}
             {totalFeaturedPages > 1 && (
               <div className="mt-8 flex justify-center">
-                <div className="flex gap-3 overflow-x-auto px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 backdrop-blur-sm scrollbar-hide">
+                <div className="flex gap-3 overflow-x-auto px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 backdrop-blur-none sm:backdrop-blur-sm scrollbar-hide">
                   {Array.from({ length: totalFeaturedPages }).map((_, i) => {
                     const page = i + 1;
                     return (
@@ -470,7 +470,7 @@ const Blog = () => {
           {/* Pagination */}
           {totalAllBlogsPages > 1 && (
             <div className="mt-8 flex justify-center">
-              <div className="flex gap-3 overflow-x-auto px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 backdrop-blur-sm scrollbar-hide">
+              <div className="flex gap-3 overflow-x-auto px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 backdrop-blur-none sm:backdrop-blur-sm scrollbar-hide">
                 {Array.from({ length: totalAllBlogsPages }).map((_, i) => {
                   const page = i + 1;
                   return (
